@@ -1,0 +1,16 @@
+name: Demo Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Mensaje a imprimir'
+        required: true
+        type: string
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print message
+        run: echo "${{ inputs.message }}"
